@@ -1,0 +1,15 @@
+# ==============================================================================
+# .gitignore Cheat Sheet & Syntax Reference
+# ==============================================================================
+# /folder/        -> Ignore folder only at repository root
+# folder/         -> Ignore folder and its contents anywhere in repository
+# *.ext           -> Ignore all files with this extension anywhere
+# file.txt        -> Ignore a specific file
+# folder/*.log    -> Ignore all .log files inside a specific folder
+# !.env.example   -> Negation: do NOT ignore this file (exception rule)
+# ==============================================================================
+
+# ==============================================================================
+# Add below:
+# ==============================================================================
+
