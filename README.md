@@ -18,3 +18,9 @@
 [![Google Scholar](https://img.shields.io/badge/Google%20Scholar-Profile-4285F4?logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user=yePUu3cAAAAJ&hl=en)
 [![ResearchGate](https://img.shields.io/badge/ResearchGate-Profile-00CCBB?logo=researchgate&logoColor=white)](https://www.researchgate.net/profile/Mohamad-Khairi-Ishak-2?ev=prf_overview)
 
+## Current Status
+
+> Literature Review template has been shared with the team members, awaiting submission by deadline: **16-09-2026**
+
+> [!TIP]
+> Refer to [this template](docs/templates/SDPLitRevTemp.docx) and submit before the deadline.
