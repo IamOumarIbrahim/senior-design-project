@@ -27,7 +27,7 @@
 
 ## Models Considered
 
-**RGB: Yolo11n**
+**RGB: [YOLO11n](https://docs.ultralytics.com/models/yolo11/)** ([Repo](https://github.com/ultralytics/ultralytics) | [Weights](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt))
 
 | Model       | Overall normalized score |
 | ----------- | -----------------------: |
@@ -35,19 +35,18 @@
 | YOLO26n     |                    53.60 |
 | D-FINE-N    |                    29.68 |
 
-**NIR: Yolov8n**
+**NIR: [YOLOv8n](https://docs.ultralytics.com/models/yolov8/)** ([Repo](https://github.com/ultralytics/ultralytics) | [Weights](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt))
 
 | Model        | Overall normalized score |
 | ------------ | -----------------------: |
 | **YOLOv8n**  |                **89.50** |
 | RT-DETRv2-S  |                    75.65 |
-| **D-FINE-N** |                **70.72** |
+| D-FINE-N     |                70.72     |
 | YOLO11n      |                    51.12 |
 | YOLO26n      |                    46.43 |
 
 * These results were calculated through a equally-weighted best normalized score. [[1]](#ref-1)
 
----
 
 ## References
 
