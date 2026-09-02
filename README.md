@@ -45,10 +45,10 @@
 | YOLO11n      |                    51.12 |
 | YOLO26n      |                    46.43 |
 
-* These results were calculated through a equally-weighted best normalized score. [1]
+* These results were calculated through a equally-weighted best normalized score. [[1]](#ref-1)
 
 ---
 
 ## References
 
-[1] O. M. Ibrahim, M. K. bin Ishak, K. Ammar, and N. M. Mirza, "[Lightweight Object Detection for Driver Monitoring: A Subject-Disjoint Benchmark](docs/references/to_start_with/manuscript.pdf)."
+<a id="ref-1"></a>[1] O. M. Ibrahim, M. K. bin Ishak, K. Ammar, and N. M. Mirza, "[Lightweight Object Detection for Driver Monitoring: A Subject-Disjoint Benchmark](docs/references/to_start_with/manuscript.pdf)."
