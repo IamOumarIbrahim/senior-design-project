@@ -24,3 +24,31 @@
 
 > [!TIP]
 > Refer to [this template](docs/templates/SDPLitRevTemp.docx) and submit before the deadline.
+
+## Models Considered
+
+**RGB: Yolo11n**
+
+| Model       | Overall normalized score |
+| ----------- | -----------------------: |
+| **YOLO11n** |                **70.93** |
+| YOLO26n     |                    53.60 |
+| D-FINE-N    |                    29.68 |
+
+**NIR: Yolov8n**
+
+| Model        | Overall normalized score |
+| ------------ | -----------------------: |
+| **YOLOv8n**  |                **89.50** |
+| RT-DETRv2-S  |                    75.65 |
+| **D-FINE-N** |                **70.72** |
+| YOLO11n      |                    51.12 |
+| YOLO26n      |                    46.43 |
+
+* These results were calculated through a equally-weighted best normalized score. [1]
+
+---
+
+## References
+
+[1] O. M. Ibrahim, M. K. bin Ishak, K. Ammar, and N. M. Mirza, "[Lightweight Object Detection for Driver Monitoring: A Subject-Disjoint Benchmark](docs/references/to_start_with/manuscript.pdf)."
