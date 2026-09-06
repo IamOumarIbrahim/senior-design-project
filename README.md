@@ -7,6 +7,10 @@
   <img src="https://img.shields.io/badge/Platform-Raspberry%20Pi%204-C51A4A?style=flat-square&logo=raspberrypi&logoColor=white" alt="Platform" />
 </p>
 
+<p align="center">
+  <img src="comic.png" alt="Combating Cry-Wolf in Driver Monitoring" width="750" />
+</p>
+
 ---
 
 ## Team Members
