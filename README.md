@@ -14,7 +14,7 @@
 </p>
 
 <p align="center">
-  <img src="comic.png" alt="Driver Monitoring System with False Alarm Reduction" width="450" />
+  <img src="comic.png" alt="Driver Monitoring System with False Alarm Reduction" width="550" />
 </p>
 
 ---
