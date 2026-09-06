@@ -9,7 +9,7 @@
 
 ---
 
-## 👥 Team Members
+## Team Members
 
 | Member | Student ID | Email | Program |
 | :--- | :---: | :--- | :---: |
@@ -18,7 +18,7 @@
 | **Faris Munadhil Ahmed Alagha** | U23104246 | [U23104246@sharjah.ac.ae](mailto:U23104246@sharjah.ac.ae) | CPE |
 | **Mohamed Ahmed Saad Khafagy** | U20101649 | [U20101649@sharjah.ac.ae](mailto:U20101649@sharjah.ac.ae) | CPE |
 
-## 🎓 Supervisor
+## Supervisor
 
 **Dr. Mohamad Khairi Bin Ishak**  
 *Associate Professor, Department of Electrical and Computer Engineering — University of Sharjah*
@@ -30,17 +30,17 @@
 
 ---
 
-## 📌 Current Status & Milestones
+## Current Status & Milestones
 
 > [!IMPORTANT]
 > **Active Milestone: Literature Review**  
 > The literature review template has been shared with team members.  
-> 🗓️ **Submission Deadline:** `16-09-2026`  
-> 📄 **Resource:** [Literature Review Template](docs/templates/SDPLitRevTemp.docx) | 📘 **Guide:** [SDP Guide](docs/guide/SDPGuide_Fall2025%20(1).pdf)
+> **Submission Deadline:** `16-09-2026`  
+> **Resource:** [Literature Review Template](docs/templates/SDPLitRevTemp.docx) | **Guide:** [SDP Guide](docs/guide/SDPGuide_Fall2025%20(1).pdf)
 
 ---
 
-## 🔍 Problem Statement
+## Problem Statement
 
 As regulatory bodies increasingly mandate in-cabin Driver Monitoring Systems (DMS) [[1]](#ref-1) to reduce traffic collisions caused by drowsiness and distraction, edge deployment of lightweight vision models has become indispensable. However, edge DMS deployment encounters three fundamental bottlenecks:
 
@@ -52,7 +52,7 @@ This creates a critical trade-off: larger server-grade networks suppress false d
 
 ---
 
-## 📖 Overview
+## Overview
 
 Driver drowsiness and inattention contribute to over 35% of all roadway fatalities [[2]](#ref-2). While in-cabin DMS can mitigate these dangers, conventional edge detectors frequently issue nuisance alarms, leading drivers to ignore or actively circumvent monitoring equipment [[3]](#ref-3).
 
@@ -60,7 +60,7 @@ The primary objective of this project is to develop an edge-optimized DMS that d
 
 ---
 
-## ⚙️ Methodology
+## Methodology
 
 Our engineering workflow is structured into three consecutive phases:
 
@@ -81,15 +81,15 @@ flowchart LR
 
 ---
 
-## 🎯 Deliverables
+## Deliverables
 
-- 📄 **Engineering & Research Report:** Comprehensive documentation detailing the literature review, dataset curation strategy, benchmark evaluations, and embedded deployment results.
-- 🧠 **Optimized Nano-Scale Model Weights:** Ready-to-deploy weights for DMS edge deployment trained on curated hard-negative datasets to minimize false alarms.
-- 🛠️ **Physical Embedded Prototype:** A functional Raspberry Pi 4-based embedded system featuring live camera input and responsive alerting for real-time driver monitoring.
+- **Engineering & Research Report:** Comprehensive documentation detailing the literature review, dataset curation strategy, benchmark evaluations, and embedded deployment results.
+- **Optimized Nano-Scale Model Weights:** Ready-to-deploy weights for DMS edge deployment trained on curated hard-negative datasets to minimize false alarms.
+- **Physical Embedded Prototype:** A functional Raspberry Pi 4-based embedded system featuring live camera input and responsive alerting for real-time driver monitoring.
 
 ---
 
-## 📊 Models Considered & Benchmark Results
+## Models Considered & Benchmark Results
 
 The following benchmark comparisons reflect evaluation on subject-disjoint driver monitoring datasets [[4]](#ref-4).
 
@@ -118,7 +118,7 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```text
 ├── README.md               # Project documentation and benchmark summary
@@ -139,7 +139,7 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 
 ---
 
-## 📚 References
+## References
 
 - <a id="ref-1"></a>**[1]** F. Lyrheden, *"How Driver Monitoring Systems (DMS) Are Being Made Mandatory in 18 Million European Cars,"* Smart Eye, Apr. 28, 2023. [Online]. Available: [smarteye.se](https://smarteye.se/blog/the-general-safety-regulations-gsr-and-driver-monitoring-systems-dms/). [Accessed: Sep. 6, 2026].
 - <a id="ref-2"></a>**[2]** G. Merlhiot and M. Bueno, *"How drowsiness and distraction can interfere with take-over performance: A systematic and meta-analysis review,"* Accident Analysis & Prevention, vol. 170, Art. no. 106536, Jun. 2022. doi: [10.1016/j.aap.2021.106536](https://doi.org/10.1016/j.aap.2021.106536).
