@@ -1,4 +1,4 @@
-# Combating Cry-Wolf in Edge Driver Monitoring via Targeted Mining
+<h1 align="center">Combating Cry-Wolf in Edge Driver Monitoring via Targeted Mining</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Project-Senior%20Design%20Project-0A66C2?style=flat-square" alt="Project" />
