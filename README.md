@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/badge/Institution-University%20of%20Sharjah-B31B1B?style=flat-square" alt="Institution" />
   <img src="https://img.shields.io/badge/College-College%20of%20Computing%20%26%20Informatics-005A9C?style=flat-square" alt="College" />
   <img src="https://img.shields.io/badge/Platform-Raspberry%20Pi%204-C51A4A?style=flat-square&logo=raspberrypi&logoColor=white" alt="Platform" />
+  <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
 </p>
 
 <p align="center">
@@ -156,6 +157,7 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 ## Repository Structure
 
 ```text
+├── LICENSE                 # Apache License 2.0
 ├── README.md               # Project documentation and benchmark summary
 ├── comic.png               # Conceptual illustration of driver false alarm fatigue
 ├── docs/
@@ -171,7 +173,15 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 │   │       └── ...
 │   ├── PDFs/               # Compiled project reports (to be populated)
 │   └── report/             # Report source documents
+└── src/                    # Source code
+    └── main.rb             # CLI interface and hardware control logic
 ```
+
+---
+
+## License
+
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
 ---
 
