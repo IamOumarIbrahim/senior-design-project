@@ -1,15 +1,45 @@
-# ==============================================================================
-# .gitignore Cheat Sheet & Syntax Reference
-# ==============================================================================
-# /folder/        -> Ignore folder only at repository root
-# folder/         -> Ignore folder and its contents anywhere in repository
-# *.ext           -> Ignore all files with this extension anywhere
-# file.txt        -> Ignore a specific file
-# folder/*.log    -> Ignore all .log files inside a specific folder
-# !.env.example   -> Negation: do NOT ignore this file (exception rule)
-# ==============================================================================
+# Dependencies & Builds
+node_modules/
+dist/
+dist-electron/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.pt
+*.onnx
 
-# ==============================================================================
-# Add below:
-# ==============================================================================
+# Databases and Local Storage
+data/
+*.sqlite
+*.sqlite3
+*.db
+*.local
+*.log
 
+# Design source files
+*.psd
+
+# LaTeX compilation artifacts
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lot
+*.lof
+*.out
+*.synctex.gz
+*.toc
+
+# Submodule / subproject
+Capstone/

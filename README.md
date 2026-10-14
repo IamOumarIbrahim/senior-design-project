@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/badge/Track-Hardware%2FEmbedded%20Systems%20%7C%20AI%2FRobotics-7952B3?style=flat-square" alt="Track" />
   <img src="https://img.shields.io/badge/Institution-University%20of%20Sharjah-B31B1B?style=flat-square" alt="Institution" />
   <img src="https://img.shields.io/badge/College-College%20of%20Computing%20%26%20Informatics-005A9C?style=flat-square" alt="College" />
-  <img src="https://img.shields.io/badge/Platform-Raspberry%20Pi%204-C51A4A?style=flat-square&logo=raspberrypi&logoColor=white" alt="Platform" />
+  <img src="https://img.shields.io/badge/Platform-Raspberry%20Pi%204%20%7C%20x86%20Edge-C51A4A?style=flat-square&logo=raspberrypi&logoColor=white" alt="Platform" />
   <img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
 </p>
 
@@ -26,7 +26,7 @@
 - **College:** College of Computing and Informatics
 - **Department:** Computer Engineering Department
 - **Project Track:** Hardware / Embedded Systems & AI / Robotics
-- **Academic Year:** Fall 2026–2027
+- **Academic Year:** Fall 2026-2027
 
 ---
 
@@ -51,86 +51,45 @@
 
 ---
 
-## Current Status & Milestones
+## Academic Proposal & Documentation
 
-> [!IMPORTANT]
-> **Active Milestone: Literature Review**  
-> The literature review template has been shared with team members.  
-> **Submission Deadline:** `16-09-2026`  
-> **Resource:** [Literature Review Template](docs/templates/SDPLitRevTemp.docx) | **Guide:** [SDP Guide](docs/guide/SDPGuide_Fall2025%20(1).pdf)
+The complete academic proposal report has been compiled and validated:
 
----
-
-## Problem Statement
-
-As countries increasingly mandate the usage of in-cabin Driver Monitoring Systems (DMS) [[1]](#ref-1) aiming to minimize accidents caused by driver drowsiness and distraction, edge deployment of lightweight vision models has become essential. However, edge system deployment faces three core bottlenecks:
-
-1. **False Alerts & Driver Trust:** False detections can trigger unnecessary alerts and downstream operations, potentially reducing driver trust and system reliability.
-2. **Latency & Resource Constraints:** Real-time monitoring requires low inference latency, while limited computational resources, memory, power, and thermal capacity restrict the use of computationally intensive models on edge devices.
-3. **Dynamic Cabin Conditions & Illumination:** Variations in cabin conditions and visible (RGB) and Near-Infrared (NIR) illumination can affect model performance and increase susceptibility to false detections.
-
-This introduces a clear tradeoff: Higher compute systems effectively minimize false detections, yet their footprint renders them infeasible in real-time deployment. Overall, this project addresses this challenge through lightweight object detection, hard negative mining, and embedded system implementation.
+- **Proposal PDF:** [docs/PDFs/Proposal.pdf](docs/PDFs/Proposal.pdf) (19 pages, IEEE format, TikZ statistical distributions, system architecture block diagrams, feature priority matrices, and research roadmap).
+- **LaTeX Source Code:** [docs/report/Proposal/](docs/report/Proposal/)
+  - `Proposal.tex`: Main LaTeX document preamble, committee attribution, and structure.
+  - `Chapters/Chapter_1.tex`: Problem statement, accident statistics (involvement and severity for drowsiness and distraction), limitations of traditional DMS, proposed solution, differentiator analysis, feature requirements, and semester timeline.
+  - `acronyms/acronyms.tex`: Terminology glossary definitions (DMS, IR, RGB, YOLO, GSR, EAR, PERCLOS, EMA, WAL, ROI, RTA).
+  - `Bibliography/references.bib`: Complete academic bibliography and references.
+  - `Figures/`: System block diagrams, empirical evaluation charts, and institution branding.
 
 ---
 
-## Project Summary, Importance & Objectives
+## Problem Statement and Proposed Solution
 
-Drowsiness and distraction are major factors of road crashes and contribute to more than 35% of road fatalities [[2]](#ref-2). While in-cabin Driver Monitoring Systems (DMS) help to reduce these risks, these systems frequently produce nuisance false alarms, which undermine driver trust, encouraging the driver to circumvent the monitoring system [[3]](#ref-3).
+Driver Monitoring Systems (DMS) evolved since their introduction in 2006, transitioning from simple alerts through infrared cameras to eye gaze tracking and vehicular spatial fusion. However, nuisance alerts and false alarms cause driver distrust in these systems, resulting in system neglect or active circumvention. The research gap centers on improving user experience, contextual calibration, and reliability in real-world driving environments.
 
-### Objectives
+In 2024, the European Union's General Safety Regulation (GSR) mandated that all newly registered vehicles must include a DMS. To support this surging rate of deployment, systems must deliver trustworthy performance without distracting the driver with unnecessary warnings.
 
-1. **Lightweight Vision Benchmarking:** Evaluate lightweight object detection models using RGB and NIR driver monitoring datasets.
-2. **Dataset Calibration & Hard Negative Mining:** Investigate negative sample ratios and hard negative mining for reducing false detections while maintaining detection performance.
-3. **Embedded Prototype Implementation:** Deploy the selected model on a Raspberry Pi-based prototype integrating a camera and alert mechanism.
-
-The final system will be evaluated using detection accuracy, F1 score, false detections per 1,000 negative frames, inference latency, and frame rate. The project combines AI model development, dataset optimization, embedded implementation, and real-time system evaluation.
-
----
-
-## Methodology
-
-Our engineering workflow is structured into three consecutive phases:
-
-```mermaid
-flowchart LR
-    A["Phase 1: Benchmarking<br/>• Nano-scale (<5M params)<br/>• RGB & NIR datasets<br/>• Multi-metric score"] --> B["Phase 2: Targeted Mining<br/>• Hard false positives<br/>• Negative ratios (0–60%)<br/>• False alarm suppression"]
-    B --> C["Phase 3: Edge Prototyping<br/>• Raspberry Pi 4<br/>• Camera integration<br/>• Real-time alert mechanism"]
-```
-
-1. **Nano-Scale Model Benchmarking:**  
-   Benchmark nano-scale (<5M parameters) detection families, such as D-FINE and YOLO, across RGB and NIR in-cabin 30 FPS video datasets (such as DMD and Drive&Act). Models are evaluated on localized (not temporal) inattention cues (e.g., yawning, eating, drinking) using an equally-weighted normalized score (mAP@50, macro-F1, FPS, false detections per 1,000 frames) to render the optimal model that balances accuracy, detection, and latency.
-
-2. **Dataset Calibration & Hard Negative Mining:**  
-   Calibrate the dataset across negative-to-positive frame ratios (0%, 20%, 40%, 60%) and curate the dataset with hard false positives instead of random negative frames to suppress false detections.
-
-3. **Edge Optimization & Real-Time Prototyping:**  
-   The selected lightweight model will be optimized and deployed on a Raspberry Pi-based edge platform integrated with an RGB camera and real-time alert mechanism. The complete embedded system will be experimentally evaluated in terms of inference speed, processing latency, detection reliability, false alarm rate, and overall real-time performance under representative driver monitoring conditions.
-
----
-
-## Expected Outcomes & Deliverables
-
-| Outcome Type | Selected | Description |
-| :--- | :---: | :--- |
-| **Physical Prototype** | Yes | Raspberry Pi 4-based embedded system with real-time RGB camera feed and alert mechanism |
-| **Research Paper** | Yes | Benchmark evaluation, dataset curation methodology, and edge deployment findings |
-| **Software Module** | Yes | Optimized lightweight detection weights and inference pipeline tailored for edge hardware |
-| **Simulation Demo** | — | — |
-
-The project delivers three main outcomes:
-
-- **Technical Report & Literature Review:** A comprehensive report covering the literature review, dataset curation methodology, and embedded deployment results.
-- **Optimized Lightweight Model:** An optimized lightweight object detection model for edge-based Driver Monitoring Systems, trained using curated data to reduce false detections while maintaining reliable detection performance.
-- **Functional Embedded Physical Prototype:** A prototype implemented on a Raspberry Pi 4, integrating a real-time RGB camera, edge AI inference, and an alert mechanism for in-cabin driver monitoring. The prototype demonstrates the practical feasibility of deploying lightweight AI models for reliable, real-time driver monitoring on resource-constrained edge hardware.
+We counter traditional DMS shortcomings through:
+1. **Dynamic ROI Face Cropping:** Continuous face-center tracking providing smooth 640x640 crops for focused visual inference.
+2. **Hard Negative Mining & Nano-Scale Detection:** Deploying YOLO11n to eliminate false positive object cues (e.g. hand on chin vs. phone, talking vs. yawning).
+3. **Continuous Exponential Moving Average (EMA) Filtering:** True time-delta continuous filtering to reject momentary frame classification noise.
+4. **Mirror-Check Glance Suppression:** Mirror checks lasting under 1.5 seconds are suppressed from triggering false distraction alarms.
+5. **Multi-Tier Escalation:** Graduated response from Tier 1 gentle chimes to Tier 2 bilingual voice warnings (English and Arabic) and Tier 3 high-urgency alarms.
+6. **20-Second Driver Baseline Calibration:** Pre-drive eye aspect ratio (EAR) baseline capture computing 99th percentile personalized cutoffs.
+7. **Pre-Trip Driver Readiness Survey:** Standardized psychometric fatigue self-assessment before highway journeys.
+8. **Context-Aware Highway Rest Stop Routing:** Proactive POI recommendations for UAE highway corridors (E11, E311, E611).
+9. **Power-Cut Safe SQLite WAL Logging:** Write-Ahead Logging ensuring zero data loss during vehicle ignition cuts.
 
 ---
 
 ## Models Considered & Benchmark Results
 
-The following benchmark comparisons reflect evaluation on subject-disjoint driver monitoring datasets [[4]](#ref-4).
+The following benchmark comparisons reflect evaluation on subject-disjoint driver monitoring datasets:
 
 ### Visible Spectrum (RGB)
-*Primary candidate:* **[YOLO11n](https://docs.ultralytics.com/models/yolo11/)** ([Ultralytics Repository](https://github.com/ultralytics/ultralytics) | [Pretrained Weights](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt))
+*Primary candidate:* **[YOLO11n](https://docs.ultralytics.com/models/yolo11/)**
 
 | Model | Overall Normalized Score |
 | :--- | :---: |
@@ -139,7 +98,7 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 | D-FINE-N | 29.68 |
 
 ### Near-Infrared Spectrum (NIR)
-*Primary candidate:* **[YOLOv8n](https://docs.ultralytics.com/models/yolov8/)** ([Ultralytics Repository](https://github.com/ultralytics/ultralytics) | [Pretrained Weights](https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8n.pt))
+*Primary candidate:* **[YOLOv8n](https://docs.ultralytics.com/models/yolov8/)**
 
 | Model | Overall Normalized Score |
 | :--- | :---: |
@@ -149,33 +108,197 @@ The following benchmark comparisons reflect evaluation on subject-disjoint drive
 | YOLO11n | 51.12 |
 | YOLO26n | 46.43 |
 
-> [!NOTE]
-> *Overall normalized scores are computed using an equally-weighted combination of mAP@50, macro-F1, throughput (FPS), and false alarms per 1,000 frames. For full benchmarking methodology, refer to [[4]](#ref-4).*
+---
+
+## System Architecture
+
+```text
++---------------------------------------------------------------------------------+
+|                                 SENSING LAYER                                   |
+|   1080p 30 FPS Camera Ingestion  |  Optical Camera Occlusion / Sharpness Check  |
++---------------------------------------------------------------------------------+
+                                         |
+                                         v
++---------------------------------------------------------------------------------+
+|                              EDGE VISION PIPELINE                               |
+|   Dynamic 640x640 ROI Crop       |  YOLO11n Nano In-Cabin Object Detection      |
+|   Facial Landmark Tracking       |  Eye Aspect Ratio (EAR) & 60s PERCLOS Engine |
++---------------------------------------------------------------------------------+
+                                         |
+                                         v
++---------------------------------------------------------------------------------+
+|                       TEMPORAL & CONTEXTUAL FILTERING                           |
+|   Continuous EMA Smoothing (dt)  |  Mirror-Check Suppression (<1.5s glances)    |
+|   Alert Cooldown (10s lock)      |  Hysteresis State Machine                    |
++---------------------------------------------------------------------------------+
+                                         |
+                                         v
++---------------------------------------------------------------------------------+
+|                          ACTUATION & PERSISTENCE                                |
+|   Multi-Tier Alerts (Chime / Bilingual Voice / Siren) | LED Status Bar (RGB)   |
+|   Power-Cut Safe SQLite WAL Telemetry Logging          | HTTP / MJPEG Stream    |
++---------------------------------------------------------------------------------+
+                                         |
+                                         v
++---------------------------------------------------------------------------------+
+|                      IN-CABIN TABLET & DESKTOP DASHBOARD                        |
+|   Live Monitor View (HUD Canvas, LED Strip, Calibration, Survey, Rest Stops)     |
+|   Trips Log & Timeline Playback  |  Longitudinal Statistics & Attention Heatmap |
++---------------------------------------------------------------------------------+
+```
 
 ---
 
 ## Repository Structure
 
+Every directory contains a dedicated `README.md` documenting its files and operational purpose:
+
 ```text
+Senior Design Project/
 ├── LICENSE                 # Apache License 2.0
-├── README.md               # Project documentation and benchmark summary
-├── comic.png               # Conceptual illustration of driver false alarm fatigue
-├── docs/
-│   ├── guide/              # Senior Design Project guidelines
-│   │   └── SDPGuide_Fall2025 (1).pdf
-│   ├── templates/          # Official report & literature review templates
-│   │   ├── SDPLitRevTemp.docx
-│   │   └── Report_Template_SDP1_Updated_Fall_2022 (4).docx
-│   ├── references/         # Foundational research papers & benchmark manuscripts
-│   │   └── to_start_with/
-│   │       ├── manuscript.pdf
-│   │       ├── thesis_final.pdf
-│   │       └── ...
-│   ├── PDFs/               # Compiled project reports (to be populated)
-│   └── report/             # Report source documents
-└── src/                    # Source code
-    └── main.rb             # CLI interface and hardware control logic
+├── README.md               # Master system documentation, architecture, and guides
+├── comic.png               # Conceptual illustration of driver monitoring
+├── build_diagram.py        # System block diagram generator script
+├── driver-monitoring-block-diagram.png # Architecture block diagram
+├── Volunteer_Video_Consent_Form.pdf    # Ethics & video collection consent form
+├── package.json            # Node.js dependencies, scripts, and Electron configuration
+├── vite.config.ts          # Vite build configuration with React plugin
+├── tsconfig.json           # TypeScript configuration
+├── dms/                    # Real-time Python Edge Driver Monitoring System
+│   ├── README.md           # Edge pipeline documentation
+│   ├── camera.py           # 1080p 30 FPS camera capture & synthetic driver simulator
+│   ├── blindness.py        # Camera blindness, occlusion, and sharpness detector
+│   ├── roi.py              # Dynamic face center tracking & 640x640 crop
+│   ├── detector.py         # YOLO11n object detector with heuristic fallback
+│   ├── eye_tracker.py      # Left/right EAR, blink counter, and rolling 60s PERCLOS
+│   ├── temporal_filter.py  # Continuous-time Exponential Moving Average (EMA) filter
+│   ├── suppression.py      # Mirror glance suppression, hysteresis, and alert cooldowns
+│   ├── alerts.py           # Multi-tier alert dispatcher (audio WAV, English/Arabic voice, LED)
+│   ├── calibration.py      # 20-second baseline calibration calculating 99th percentile cutoffs
+│   ├── readiness.py        # Pre-trip driver fatigue and readiness psychometric survey
+│   ├── rest_stops.py       # UAE highway rest stop lookup service (E11, E311, E611)
+│   ├── database.py         # Power-cut safe SQLite WAL telemetry logger
+│   ├── engine.py           # Core orchestrator pipeline with HUD visualizer
+│   ├── server.py           # Multi-threaded HTTP and MJPEG streaming server (port 8765)
+│   ├── cli.py              # Command-line interface subcommands
+│   └── __main__.py         # Entry point for python -m dms
+├── src/                    # In-Cabin Tablet & Desktop Dashboard (React 18 + TypeScript)
+│   ├── README.md           # Frontend architecture documentation
+│   ├── App.tsx             # Main application layout, view switching, and navigation state
+│   ├── components/         # UI component hierarchy
+│   │   ├── README.md       # Component hierarchy documentation
+│   │   ├── common/         # Layout headers, title bars, and navigation sidebar
+│   │   ├── dashboard/      # Fleet KPIs, trend charts, breakdowns, and heatmaps
+│   │   ├── live/           # In-cabin live tablet monitor with HUD canvas and controls
+│   │   ├── settings/       # Threshold sliders, language options, and audio controls
+│   │   ├── statistics/     # Longitudinal driving analytics and vigilance trends
+│   │   └── trips/          # Trip logs, session filtering, and detail modal
+│   ├── services/           # Service layer and IPC abstraction
+│   │   ├── README.md       # Service layer overview
+│   │   ├── api.ts          # Unified Electron IPC and browser fallback bridge
+│   │   └── db/             # SQLite schema, queries, seeder, and WASM sql.js wrapper
+│   └── types/              # TypeScript interfaces for trips, alerts, and telemetry
+├── electron/               # Electron main desktop runtime
+│   ├── README.md           # Desktop integration documentation
+│   ├── main.ts             # Frameless browser window, lifecycle, and IPC handlers
+│   ├── preload.ts          # Secure context bridge exposing window.driveSafeAPI
+│   └── database/           # Native better-sqlite3 database handlers
+├── docs/                   # Documentation, specifications, and academic reports
+│   ├── README.md           # Documentation guide
+│   ├── VigilBench_Spec.md  # Detailed benchmark specification
+│   ├── guide/              # University senior design project guidelines and tutorial
+│   ├── templates/          # Official academic report templates
+│   ├── references/         # Literature papers and research benchmarks
+│   ├── PDFs/               # Compiled publication PDFs (Proposal.pdf)
+│   └── report/             # LaTeX report sources
+│       └── Proposal/       # Complete Proposal LaTeX document (Chapter 1, TikZ, BibTeX)
+├── Capstone/               # Submodule containing course assets, audio tones, and guides
+│   ├── Alarm/              # Synthesized WAV alerts and MATLAB generation scripts
+│   ├── Build/              # Hardware bill of materials and dashboard UI mockups
+│   ├── Dataset/            # Video collection guidelines and protocols
+│   └── Report/             # Colorblind-safe palettes and report assets
+└── tests/                  # Automated verification suites
+    ├── README.md           # Test suite documentation
+    ├── test_dms_engine.py  # Python unittest verifying all DMS logic modules
+    └── verify-db.js        # Node.js SQLite WAL schema and query verification
 ```
+
+---
+
+## Installation & Running the Software
+
+### Prerequisites
+
+- **Python 3.10+** (with `torch`, `ultralytics`, `opencv-python`, `numpy`, `scipy`)
+- **Node.js 18+** and **npm**
+
+### 1. Edge Driver Monitoring Engine (Python)
+
+```bash
+# Run unit tests verifying all edge engine components
+python -m unittest tests/test_dms_engine.py
+
+# Run a headless dry-run on 100 simulated frames
+python -m dms dry-run --frames 100
+
+# Run 20-second pre-drive baseline calibration
+python -m dms calibrate
+
+# Take the pre-trip driver readiness survey
+python -m dms readiness
+
+# Check nearest UAE highway rest stops
+python -m dms rest-stops
+
+# Launch live streaming engine with MJPEG server on port 8765
+python -m dms live
+```
+
+### 2. In-Cabin Tablet & Desktop Dashboard (React + Electron)
+
+```bash
+# Install frontend dependencies
+npm install
+
+# Run database verification tests
+npm test
+
+# Build production frontend and Electron binaries
+npm run build
+npm run build:electron
+
+# Launch Electron desktop application
+npm run electron
+
+# Or launch development web dashboard with hot reloading
+npm run dev
+```
+
+### 3. Compiling the Academic Proposal (LaTeX)
+
+```bash
+# Navigate to Proposal LaTeX directory
+cd "docs/report/Proposal"
+
+# Compile complete proposal with TikZ diagrams, BibTeX citations, and acronyms
+pdflatex Proposal.tex
+bibtex Proposal
+makeglossaries Proposal
+pdflatex Proposal.tex
+pdflatex Proposal.tex
+```
+
+---
+
+## Verification & Testing Gates
+
+All software components undergo rigorous automated validation:
+
+- **Edge DMS Unit Tests (`tests/test_dms_engine.py`):** 11 test cases validating blindness detection, eye tracking, EAR, PERCLOS, continuous EMA filtering, mirror-glance suppression (<1.5s), alert cooldowns (10s), readiness surveys, rest stop locator, and SQLite WAL database insertion and truncate checkpoints.
+- **Dry-Run Benchmark:** Verified sustained 14+ FPS processing throughput with dynamic ROI crop and telemetry persistence.
+- **Database Schema Tests (`tests/verify-db.js`):** Validated table creation, foreign keys, telemetry sampling, and aggregate KPI calculation.
+- **TypeScript & Build Gates:** Clean compilation across Vite frontend (`npm run build`) and Electron main process (`npm run build:electron`).
+- **LaTeX Compilation Gate:** Clean PDF compilation generating the 19-page proposal report without fatal errors.
 
 ---
 

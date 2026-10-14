@@ -1,0 +1,50 @@
+{
+  "name": "drivesafe-dashboard",
+  "version": "1.0.0",
+  "description": "Production-quality desktop post-drive analytics dashboard for distraction and drowsiness monitoring",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "electron": "electron .",
+    "electron:dev": "concurrently -k \"vite\" \"wait-on tcp:5173 && npm run build:electron && cross-env VITE_DEV_SERVER_URL=http://localhost:5173 electron .\"",
+    "test": "node tests/verify-db.js",
+    "start": "npm run electron:dev"
+  },
+  "keywords": [
+    "driver-monitoring",
+    "drowsiness-detection",
+    "distraction-detection",
+    "electron",
+    "react",
+    "analytics-dashboard"
+  ],
+  "author": "DriveSafe Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.475.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.0",
+    "sql.js": "^1.12.0",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/sql.js": "^1.4.9",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.1.0",
+    "cross-env": "^7.0.3",
+    "electron": "^33.2.1",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^6.0.0",
+    "wait-on": "^8.0.1"
+  }
+}

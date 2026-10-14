@@ -1,0 +1,127 @@
+\documentclass[12pt]{report}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{changes}
+\usepackage{color,soul}
+\usepackage{subcaption}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage[authoryear]{natbib}           % choose [numbers] or [authoryear]
+\usepackage[acronym]{glossaries}
+\makeglossaries                             % REQUIRED for \printglossary (indexed)
+\usepackage{array,xcolor,colortbl}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning}
+
+\definecolor{morange}{rgb}{0.8,0.2,0}
+\definecolor{mblue}{rgb}{0,0.1,0.8}
+\definecolor{mgreen}{rgb}{0,0.8,0.1}
+\definecolor{mred}{rgb}{1,0,0}
+
+\setglossarystyle{long}
+\newcommand{\edit}[1]{{\leavevmode\color{mblue}{#1}}}
+\newcommand{\kais}[1]{{\color{morange}{{(\bf Kais:} #1)}}}
+
+\titleformat{\chapter}[hang]{\bfseries\Large}{Chapter \thechapter}{2em}{}
+\onehalfspacing
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+
+%\input{Thesis_proposal/acronyms/acronyms}
+
+\usepackage[hidelinks]{hyperref}          % LOAD HYPERREF LAST
+
+%==============================================================
+
+
+%\titleformat{\chapter}[hang]{\bfseries\Large}{Chapter \thechapter}{2em}{}
+
+%\onehalfspacing
+
+% Header/Footer setup
+%\pagestyle{fancy}
+%\fancyhf{}
+\input{./acronyms/acronyms}
+
+% Begin document
+\begin{document}
+
+% Title Page
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.25\textwidth]{Figures/Logo_UoS.png}
+
+    \textsc{\Large College of Computing and Informatics\\
+    Department of Computer Engineering}\\[1.5cm]
+    
+    \textsc{\Large SDP Proposal}\\[0.5cm]
+    
+    \rule{\linewidth}{0.5mm} \\[0.4cm]
+    {\LARGE \bfseries Design and Implementation of an Edge-Based Driver Monitoring System with False Alarm Reduction}\\[0.4cm]
+    \rule{\linewidth}{0.5mm} \\[1.5cm]
+    
+    \begin{flushleft}
+    \textbf{Students:} \\
+    Oumar Mamoun Ibrahim (U22200741) \\
+    Abdullah Jafar Abdelhamid (U23101327) \\
+    Faris Munadhil Ahmed Alagha (U23104246) \\
+    Mohamed Ahmed Saad Khafagy (U20101649) \\[0.3cm]
+    \textbf{Supervisor:} Dr. Mohamad Khairi Bin Ishak \\
+    \textbf{Term:} Fall 2026--2027
+    \end{flushleft}
+
+    \vfill
+
+     \textbf{Date:} \today
+    \vspace*{1cm}
+       
+\end{titlepage}
+
+% Table of Contents, List of Figures, Tables
+\tableofcontents
+
+\newpage
+
+
+\listoffigures
+\listoftables
+\newpage
+\printglossary[type=\acronymtype, title=Acronyms]
+\newpage
+
+% Abstract
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+In-cabin Driver Monitoring Systems (DMS) play an increasingly vital role in road safety, particularly as regulatory bodies such as the European Union (GSR 2024) mandate automated alertness and distraction detection in all newly registered vehicles. However, conventional commercial and edge-deployed systems suffer from elevated false alarm rates, triggering nuisance alerts that induce driver frustration, cognitive fatigue, and system deactivation. This Senior Design Project presents a reliable, edge-based Driver Monitoring System deployed on the Raspberry Pi 5 platform paired with a 1080p 30 FPS RGB camera. The architecture integrates a fine-tuned YOLO11n object detector with hard-negative mining, casual exponential moving average (EMA) temporal filtering, mirror-check suppression, camera-blindness detection, and tiered multi-modal alerts in English and Arabic. Furthermore, privacy-preserving event logging with power-cut-safe SQLite WAL storage synchronizes with an interactive desktop and tablet dashboard providing behavioral trends, safety KPIs, and intelligent rest-stop suggestions.
+
+
+\chapter{Introduction}
+\input{Chapters/Chapter_1}
+
+\chapter{Literature Review}
+\input{Chapters/Chapter_2}
+
+\chapter{Technical Background}
+\input{Chapters/Chapter_3}
+
+\chapter{Proposed Solution}
+\input{Chapters/Chapter_4}
+
+\chapter{Research Methodology}
+\input{Chapters/Chapter_5}
+
+\bibliographystyle{plainnat}
+\bibliography{Bibliography/references}
+
+\end{document}
