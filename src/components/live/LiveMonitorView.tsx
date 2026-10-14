@@ -265,7 +265,7 @@ export const LiveMonitorView: React.FC = () => {
           <div className="relative aspect-video w-full bg-slate-900 flex items-center justify-center overflow-hidden">
             {engineConnected ? (
               <img
-                src={`http://127.0.0.1:8765/api/frame?t=${Date.now()}`}
+                src="http://127.0.0.1:8765/api/video_feed"
                 alt="Live Driver Stream"
                 className="w-full h-full object-cover"
                 onError={() => setEngineConnected(false)}

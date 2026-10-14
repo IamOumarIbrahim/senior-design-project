@@ -12,6 +12,7 @@ Automated verification suites covering edge DMS processing logic, mathematical f
   - `DriverReadinessSurvey` psychometric scoring and safety advisory dispatch.
   - `RestStopService` GPS-based nearest UAE highway rest stop lookup.
   - `DMSDatabase` SQLite WAL transaction safety, event insertion, session aggregation, and safe truncation checkpoints.
+- `test_live_server.py`: Integration test suite for `dms/server.py` verifying real-time HTTP REST endpoints (`/api/status`, `/api/frame`, `/api/rest-stops`, `/api/readiness`, `/api/cue`) and live server lifecycle.
 - `verify-db.js`: Node.js automated verification script testing SQLite schema creation, WAL mode configuration, trip insertion, alert event logging, real-time metrics telemetry writes, and aggregate analytics queries.
 
 ## Running Tests
@@ -19,6 +20,9 @@ Automated verification suites covering edge DMS processing logic, mathematical f
 ```bash
 # Python DMS engine unit tests
 python -m unittest tests/test_dms_engine.py
+
+# Python live streaming server integration tests
+python -m unittest tests/test_live_server.py
 
 # SQLite Node.js schema and transaction verification tests
 npm test
